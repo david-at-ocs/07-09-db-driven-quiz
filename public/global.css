@@ -1,0 +1,25 @@
+#quiz {
+  position: relative;
+  visibility: hidden;
+}
+
+/*#question {
+  position: absolute;
+}
+*/
+.unhide {
+  visibility: visible;
+}
+
+.smoosh {
+  position: absolute;
+}
+
+.smoosh p {
+  margin: 0px;
+}
+
+#choices {
+  margin-top: 50px;
+}
+
