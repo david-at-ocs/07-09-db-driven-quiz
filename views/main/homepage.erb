@@ -1,20 +1,29 @@
-<header>
-  <nav class="nav_container">
-    <div id="hamburger" class="mobile">
-      <img src="/menu.png">
+
+<body>
+  <h1>Quiz Game V2 with Questions Hidden in HTML</h1>
+  <div id="quiz">
+    <div id="question1" class="unhide smoosh">
+      <p>How many words are in this sentence?</p>
     </div>
-    <div id="mobileNav">
-      <nav>
-        <ul>
-          <a href="/beer/beers_menu"><li>Beer Menu</li></a>
-          <a href="/users/users_menu"><li>Users Menu</li></a>
-          <a href="/breweries/breweries_menu"><li>Breweries Menu</li></a>
-        </ul>
-      </nav>
-      <div style="clear: both"></div>
+    <div id="question2" class="smoosh">
+      <p>What about this sentence?</p>
+    </div>
+    <div id="question3" class="smoosh">
+      <p>And this sentence?</p>
+    </div>
+    <div id="question4" class="smoosh">
+      <p>What's your favorite letter.</p>
+    </div>
+    <div id="question5" class="smoosh">
+      <p>Is there a correct answer to this question?</p>
     </div>
   </div>
-  <h1>Welcome to Beer Ratings</h1>
-  <p>Rate beers.  Add beers.  Beer.</p>
-  <h3>Make a selection:</h3>
-</header>
+  <div id="choices"></div>
+  <input type="text" id="answer">
+  <input type="submit" id="submitter">
+  <div id="question_result"></div>
+  <input type="submit" id="next" value="Next Question">
+  <div id="total_result"></div>
+  
+  <script type="text/javascript" src="global.js"></script>
+</body>
