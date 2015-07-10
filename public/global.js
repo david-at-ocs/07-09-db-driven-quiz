@@ -1,8 +1,3 @@
-// var question1 = {possibleAnswers: "A.1\rB. 55\rC. 345\rD. 7\rE. 4", answer: "D"};
-// var question2 = {possibleAnswers: "A. 1\rB. 55\rC. 345\rD. 7\rE. 4", answer: "E"};
-// var question3 = {possibleAnswers: "A. 1\rB. 55\rC. 345\rD. 7\rE. 3", answer: "E"};
-// var question4 = {possibleAnswers: "A.\rB.\rC.\rD.\rE.", answer: "B"};
-// var question5 = {possibleAnswers: "A. Yes\rB. No\rC. Not Sure\rD. Maybe", answer: "A"}
 
 var score = 0;
 var count = 1;
@@ -11,16 +6,11 @@ var choice;
 
 // var questionsArray = [question1, question2, question3, question4, question5];
 
-quest = document.getElementById("question");
+numberOfQuestions = document.getElementById("number_of_questions").value
 choice = document.getElementById("choices");
 
 document.getElementById("submitter").addEventListener("click", given_answer);
 document.getElementById("next").addEventListener("click", next_question);
-
-
-// quest.innerText = questionsArray[count].question;
-// choice.innerText = questionsArray[count].possibleAnswers;
-
 
 
 function given_answer() {
@@ -47,13 +37,14 @@ function update_question_result(correct) {
 
 
 function next_question() {
-  if (count <= document.getElementById("number_of_questions").value) {
-    clear_fields();
-    set_next_question(count);
+  // questionNumber = parseInt(document.getElementById("question_number").value)
+  if (count <= numberOfQuestions) {
+    clear_fields(count);
+    set_next_question(count+1);
   } else {
-    final_score(count);
+    final_score(questionNumber);
   }
-  ++count
+  count++
 }
 
 function clear_fields() {
@@ -64,8 +55,8 @@ function clear_fields() {
 }
 
 function set_next_question(count) {
-  // document.getElementById("question" + count).classList.add("unhide");
-  // document.getElementById("choice" + count).classList.add("unhide");
+  document.getElementById("question" + (count)).classList.add("unhide");
+  document.getElementById("choice" + (count)).classList.add("unhide");
 }
 
 function final_score(count) {
