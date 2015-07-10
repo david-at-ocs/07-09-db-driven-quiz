@@ -11,7 +11,7 @@
       <div id="question<%= question.id %>" class="<%= @class %> smoosh">      
         <p><%= question.question %></p>
         <input type="hidden" value="<%= question.id %>" id="question_number">
-        <input type="hidden" value="<%= question.answer %>" id="answer">
+        <input type="hidden" value="<%= question.answer %>" id="answer<%= question.id %>">
         <input type="hidden" value="<%= @all_questions.length %>" id="number_of_questions">
       </div>
     <% end %>

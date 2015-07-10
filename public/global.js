@@ -1,6 +1,6 @@
 
 var score = 0;
-var count = 1;
+var questionNumber = 1;
 var quest;
 var choice;
 
@@ -19,7 +19,7 @@ function given_answer() {
 }
 
 function is_correct_answer(answer_text) {
-  if (answer_text === document.getElementById("answer").value) {
+  if (answer_text === document.getElementById("answer" + questionNumber).value) {
     score++
     return true;
   } else {
@@ -38,30 +38,30 @@ function update_question_result(correct) {
 
 function next_question() {
   // questionNumber = parseInt(document.getElementById("question_number").value)
-  if (count <= numberOfQuestions) {
-    clear_fields(count);
-    set_next_question(count+1);
+  questionNumber++
+  if (questionNumber <= numberOfQuestions) {
+    clear_fields(questionNumber);
+    set_next_question(questionNumber);
   } else {
     final_score(questionNumber);
   }
-  count++
 }
 
 function clear_fields() {
   document.getElementById("user_answer").value = null;
   document.getElementById("question_result").innerText = "";
-  document.getElementById("question" + count).classList.remove("unhide");
-  document.getElementById("choice" + count).classList.remove("unhide");
+  document.getElementById("question" + (questionNumber-1)).classList.remove("unhide");
+  document.getElementById("choice" + (questionNumber-1)).classList.remove("unhide");
 }
 
-function set_next_question(count) {
-  document.getElementById("question" + (count)).classList.add("unhide");
-  document.getElementById("choice" + (count)).classList.add("unhide");
+function set_next_question(questionNumber) {
+  document.getElementById("question" + (questionNumber)).classList.add("unhide");
+  document.getElementById("choice" + (questionNumber)).classList.add("unhide");
 }
 
-function final_score(count) {
+function final_score(questionNumber) {
   clear_fields();
-  document.getElementById("total_result").innerText = "You scored " + (score/count)*100 + "%";
+  document.getElementById("total_result").innerText = "You scored " + (score/(questionNumber-1))*100 + "%";
 }
 
 // document.getElementById("submitter").onclick = process_answer_submission;
