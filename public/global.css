@@ -1,5 +1,6 @@
 #quiz {
   position: relative;
+  top: 0px;
   visibility: hidden;
 }
 
@@ -11,6 +12,12 @@
   visibility: visible;
 }
 
+/*.hide {
+  position: absolute;
+  visibility: hidden;
+  left: -500px;
+}
+*/
 .smoosh {
   position: absolute;
 }
@@ -19,7 +26,7 @@
   margin: 0px;
 }
 
-#choices {
+.choices {
   margin-top: 20px;
 }
 
@@ -28,6 +35,7 @@
 }
 
 .form_wrapper {
-  margin-top: 70px;
+  position: absolute;
+  margin-top: 50px;
 }
 

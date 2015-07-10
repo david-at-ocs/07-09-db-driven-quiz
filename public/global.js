@@ -5,7 +5,7 @@
 // var question5 = {possibleAnswers: "A. Yes\rB. No\rC. Not Sure\rD. Maybe", answer: "A"}
 
 var score = 0;
-var count = 0;
+var count = 1;
 var quest;
 var choice;
 
@@ -24,12 +24,12 @@ document.getElementById("next").addEventListener("click", next_question);
 
 
 function given_answer() {
-    var answer = document.getElementById("answer").value.toUpperCase();
+    var answer = document.getElementById("user_answer").value.toUpperCase();
     update_question_result(is_correct_answer(answer));
 }
 
 function is_correct_answer(answer_text) {
-  if (answer_text === questionsArray[count].answer) {
+  if (answer_text === document.getElementById("answer").value) {
     score++
     return true;
   } else {
@@ -47,25 +47,25 @@ function update_question_result(correct) {
 
 
 function next_question() {
-  ++count
-  if (questionsArray[count]) {
+  if (count <= document.getElementById("number_of_questions").value) {
     clear_fields();
     set_next_question(count);
   } else {
     final_score(count);
   }
+  ++count
 }
 
 function clear_fields() {
-  document.getElementById("answer").value = null;
+  document.getElementById("user_answer").value = null;
   document.getElementById("question_result").innerText = "";
-  // document.getElementById("question" + count).classList.remove("unhide");
-  // document.getElementById("choices").innerText = "";
+  document.getElementById("question" + count).classList.remove("unhide");
+  document.getElementById("choice" + count).classList.remove("unhide");
 }
 
 function set_next_question(count) {
-  document.getElementById("question" + (count+1)).classList.add("unhide");
-  choice.innerText = questionsArray[count].possibleAnswers;
+  // document.getElementById("question" + count).classList.add("unhide");
+  // document.getElementById("choice" + count).classList.add("unhide");
 }
 
 function final_score(count) {
