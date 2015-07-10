@@ -1,14 +1,15 @@
-var question1 = {possibleAnswers: "A.1\rB. 55\rC. 345\rD. 7\rE. 4", answer: "D"};
-var question2 = {possibleAnswers: "A. 1\rB. 55\rC. 345\rD. 7\rE. 4", answer: "E"};
-var question3 = {possibleAnswers: "A. 1\rB. 55\rC. 345\rD. 7\rE. 3", answer: "E"};
-var question4 = {possibleAnswers: "A.\rB.\rC.\rD.\rE.", answer: "B"};
-var question5 = {possibleAnswers: "A. Yes\rB. No\rC. Not Sure\rD. Maybe", answer: "A"}
+// var question1 = {possibleAnswers: "A.1\rB. 55\rC. 345\rD. 7\rE. 4", answer: "D"};
+// var question2 = {possibleAnswers: "A. 1\rB. 55\rC. 345\rD. 7\rE. 4", answer: "E"};
+// var question3 = {possibleAnswers: "A. 1\rB. 55\rC. 345\rD. 7\rE. 3", answer: "E"};
+// var question4 = {possibleAnswers: "A.\rB.\rC.\rD.\rE.", answer: "B"};
+// var question5 = {possibleAnswers: "A. Yes\rB. No\rC. Not Sure\rD. Maybe", answer: "A"}
+
 var score = 0;
 var count = 0;
 var quest;
 var choice;
 
-var questionsArray = [question1, question2, question3, question4, question5];
+// var questionsArray = [question1, question2, question3, question4, question5];
 
 quest = document.getElementById("question");
 choice = document.getElementById("choices");

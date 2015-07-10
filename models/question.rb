@@ -24,7 +24,6 @@ class Question
     @id = options["id"]
     @question = options["question"]
     @answer = options["answer"]
-    @choices = QUIZ.execute("SELECT * FROM #{choices} WHERE question_id = #{id}").first
   end    
   
 
