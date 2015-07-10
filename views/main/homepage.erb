@@ -1,20 +1,35 @@
 
 <body>
-  <h1>Quiz Game V2 with Questions Hidden in HTML</h1>
+  <h1>Quiz Game V2 with db</h1>
   <div id="quiz">
-    
-    <div id="question1" class="unhide smoosh">
-      <p><% @all_questions[count].question %></p>
-    </div>
+    <% @all_questions.each do |question| %>
+      <% if question.id == 1 %>
+        <% @class =  "unhide"%>
+      <% else %>
+        <% @class = "" %>
+      <% end %>
+      <div id="question<%= question.id %>" class="<%= @class %> smoosh">      
+        <p><%= question.question %></p>
+      </div>
+    <% end %>
+    <% @all_choices.each do |choice| %>
+      <% if choice.id == 1 %>
+        <% @class =  "unhide"%>
+      <% else %>
+        <% @class = "" %>
+      <% end %>
+      <div id="choices" class="<%= @class %> smoosh">
+        <p><%= choice.choice %></p>
+      </div>
+    <% end %>
   </div>
-  <div id="choices">
-      <p><% @all_choices[count].question %></p>
-    </div>
-  <input type="text" id="answer">
-  <input type="submit" id="submitter">
-  <div id="question_result"></div>
-  <input type="submit" id="next" value="Next Question">
-  <div id="total_result"></div>
+  <div class="form_wrapper">
+    <input type="text" id="answer">
+    <input type="submit" id="submitter">
+    <div id="question_result"></div>
+    <input type="submit" id="next" value="Next Question">
+    <div id="total_result"></div>
+  </div>
   
   <script type="text/javascript" src="global.js"></script>
 </body>

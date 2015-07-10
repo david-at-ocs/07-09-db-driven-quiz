@@ -20,10 +20,14 @@
 }
 
 #choices {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 #next {
   margin-top: 50px;
+}
+
+.form_wrapper {
+  margin-top: 70px;
 }
 

@@ -19,7 +19,7 @@ document.getElementById("next").addEventListener("click", next_question);
 
 
 // quest.innerText = questionsArray[count].question;
-choice.innerText = questionsArray[count].possibleAnswers;
+// choice.innerText = questionsArray[count].possibleAnswers;
 
 
 
@@ -59,8 +59,8 @@ function next_question() {
 function clear_fields() {
   document.getElementById("answer").value = null;
   document.getElementById("question_result").innerText = "";
-  document.getElementById("question" + count).classList.remove("unhide");
-  document.getElementById("choices").innerText = "";
+  // document.getElementById("question" + count).classList.remove("unhide");
+  // document.getElementById("choices").innerText = "";
 }
 
 function set_next_question(count) {
