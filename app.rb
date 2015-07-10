@@ -15,6 +15,3 @@ require_relative "models/question.rb"
 
 # Controllers
 require_relative "controllers/main.rb"
-# require_relative "controllers/beers.rb"
-# require_relative "controllers/users.rb"
-# require_relative "controllers/breweries.rb"
