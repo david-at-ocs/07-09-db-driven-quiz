@@ -46,7 +46,7 @@ function update_question_result(correct) {
 
 
 function next_question() {
-  count++
+  ++count
   if (questionsArray[count]) {
     clear_fields();
     set_next_question(count);
